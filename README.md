@@ -6,7 +6,7 @@ of the data.
 
 Here's a quick demo of the app.
 
-![demo gif](https://raw.githubusercontent.com/jayrambhia/FooterLoaderAdapter/master/demo.gif)
+![demo gif](https://github.com/jayrambhia/FooterLoaderAdapterDemo/blob/master/demo.gif)
 
 FooterLoaderAdapter is an abstract template class which extends `RecylcerView.Adapter<RecyclerView.ViewHolder>`.
 It has following methods which user can use conveniently to create their own Recycler Adapter.
