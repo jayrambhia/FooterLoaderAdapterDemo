@@ -1,4 +1,4 @@
-package com.fenchtose.footlerloaderadapterdemo;
+package com.fenchtose.footerloaderadapterdemo;
 
 /**
  * Created by elanicdroid on 28/10/15.

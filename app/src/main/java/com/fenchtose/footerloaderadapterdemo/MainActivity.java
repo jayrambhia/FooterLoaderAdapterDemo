@@ -1,4 +1,4 @@
-package com.fenchtose.footlerloaderadapterdemo;
+package com.fenchtose.footerloaderadapterdemo;
 
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package com.fenchtose.footlerloaderadapterdemo;
+package com.fenchtose.footerloaderadapterdemo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

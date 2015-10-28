@@ -1,9 +1,8 @@
-package com.fenchtose.footlerloaderadapterdemo;
+package com.fenchtose.footerloaderadapterdemo;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
 
 /**
  * Created by jay on 1/9/15.

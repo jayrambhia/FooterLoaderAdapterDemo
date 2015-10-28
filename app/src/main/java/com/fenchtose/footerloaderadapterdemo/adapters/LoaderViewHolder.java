@@ -1,11 +1,10 @@
-package com.fenchtose.footlerloaderadapterdemo.adapters;
+package com.fenchtose.footerloaderadapterdemo.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import com.fenchtose.footlerloaderadapterdemo.R;
+import com.fenchtose.footerloaderadapterdemo.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

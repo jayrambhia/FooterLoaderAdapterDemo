@@ -1,4 +1,4 @@
-package com.fenchtose.footlerloaderadapterdemo.adapters;
+package com.fenchtose.footerloaderadapterdemo.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,14 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-import com.fenchtose.footlerloaderadapterdemo.R;
+import com.fenchtose.footerloaderadapterdemo.R;
 
 import java.util.List;
 
-/**
- * Created by elanicdroid on 14/09/15.
- */
 public abstract class FooterLoaderAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     protected boolean showLoader;
@@ -30,8 +26,13 @@ public abstract class FooterLoaderAdapter<T> extends RecyclerView.Adapter<Recycl
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         if (viewType == VIEWTYPE_LOADER) {
+
+            // Your Loader XML view here
             View view = mInflater.inflate(R.layout.loader_item_layout, viewGroup, false);
+
+            // Your LoaderViewHolder class
             return new LoaderViewHolder(view);
+
         } else if (viewType == VIEWTYPE_ITEM) {
             return getYourItemViewHolder(viewGroup);
         }
@@ -41,6 +42,8 @@ public abstract class FooterLoaderAdapter<T> extends RecyclerView.Adapter<Recycl
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+
+        // Loader ViewHolder
         if (viewHolder instanceof LoaderViewHolder) {
             LoaderViewHolder loaderViewHolder = (LoaderViewHolder)viewHolder;
             if (showLoader) {
@@ -59,16 +62,23 @@ public abstract class FooterLoaderAdapter<T> extends RecyclerView.Adapter<Recycl
     @Override
     public int getItemCount() {
 
+        // If no items are present, there's no need for loader
         if (mItems == null || mItems.size() == 0) {
             return 0;
         }
 
+        // +1 for loader
         return mItems.size() + 1;
     }
 
     @Override
     public long getItemId(int position) {
+
+        // loader can't be at position 0
+        // loader can only be at the last position
         if (position != 0 && position == getItemCount() - 1) {
+
+            // id of loader is considered as -1 here
             return -1;
         }
         return getYourItemId(position);
@@ -76,6 +86,9 @@ public abstract class FooterLoaderAdapter<T> extends RecyclerView.Adapter<Recycl
 
     @Override
     public int getItemViewType(int position) {
+
+        // loader can't be at position 0
+        // loader can only be at the last position
         if (position != 0 && position == getItemCount() - 1) {
             return VIEWTYPE_LOADER;
         }
