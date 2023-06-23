@@ -86,9 +86,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadMoreData() {
-
+        int sizeBeforeLoad = mItems.size();
         mAdapter.showLoading(true);
-        mAdapter.notifyDataSetChanged();
 
         // Load data after delay
         mHandler.postDelayed(new Runnable() {
@@ -96,9 +95,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 List<User> newItems = getData(mItems.size());
                 mItems.addAll(newItems);
-                mAdapter.setItems(mItems); // No need of this
-                mAdapter.showLoading(false);
-                mAdapter.notifyDataSetChanged();
+                mAdapter.notifyItemRangeInserted(sizeBeforeLoad, newItems.size());
             }
         }, 1500);
 
